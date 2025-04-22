@@ -1,6 +1,6 @@
 
 
-## example
+## el juegaso de la cursada
 
-TODO
+Truco balatro
 
