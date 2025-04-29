@@ -4,21 +4,26 @@ import juego.*
 class Jugador {
     const property mano = []
     var property puntos = 0
+    
 
     method repartirCartaMano(){
-         
-        mano.add(self.indiceDeCartas(self.numeroAleatorioEntre1y40()))
-        juego.cartas().remove(self.indiceDeCartas(self.numeroAleatorioEntre1y40()))
+        var indice = self.numeroAleatorioEntre1yMax()
+        juego.reducirIndiceCartas()
+        self.añadirCartaAMano(indice)
+        self.removerCartaEnIndice(indice)
       
     }
 
     method tamañoMano() = mano.size()
     method indiceDeCartas(indice) = juego.cartas().get(indice)
-    method numeroAleatorioEntre1y40() = 0.randomUpToMax(39)
+    method numeroAleatorioEntre1yMax() = 0.randomUpTo(juego.indiceCartasMax()).round()
+    method añadirCartaAMano(indice) = mano.add(self.indiceDeCartas(indice))
+    method removerCartaEnIndice(indice) = juego.cartas().remove(self.indiceDeCartas(indice))
+    method limpiarMano() = mano.removeAll(mano)
 }
 
 const jugadorPrincipal = new Jugador()
-const contricanteNiño = new Jugador()
-const contricanteJoven = new Jugador()
-const contricanteAdulto = new Jugador()
-const contricanteViejo = new Jugador()
+const oponenteNiño = new Jugador()
+const oponenteJoven = new Jugador()
+const oponenteAdulto = new Jugador()
+const oponenteViejo = new Jugador()
