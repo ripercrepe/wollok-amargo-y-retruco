@@ -1,0 +1,24 @@
+import cartas.*
+import juego.*
+import jugadores.*
+
+describe "tests del juego del truco" {
+
+  test "tests de crear baraja" {
+   juego.crearCartas()
+   juego.asignarPuntajeCadaCarta()
+   assert.equals(40, juego.cantidadDeCartas())
+   assert.equals(14,juego.cartas().get(0).puntaje())
+   assert.equals(9,juego.cartas().get(1).puntaje())
+  }
+
+  test "test de barajar mano del jugador"{
+   juego.crearCartas()
+   juego.asignarPuntajeCadaCarta()
+   jugadorPrincipal.repartirCartaMano()
+   jugadorPrincipal.repartirCartaMano()
+   jugadorPrincipal.repartirCartaMano()
+   assert.equals(3, jugadorPrincipal.tamañoMano())
+  }
+
+}
