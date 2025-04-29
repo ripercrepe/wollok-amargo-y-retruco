@@ -2,7 +2,7 @@ import cartas.*
 import juego.*
 import jugadores.*
 
-describe "tests del juego del truco" {
+describe "tests de cartas" {
 
   test "tests de crear baraja" {
    juego.crearCartas()
@@ -19,6 +19,19 @@ describe "tests del juego del truco" {
    jugadorPrincipal.repartirCartaMano()
    jugadorPrincipal.repartirCartaMano()
    assert.equals(3, jugadorPrincipal.tamañoMano())
+  }
+
+  test "tests de repartir cartas a jugador y contricante"{
+   juego.crearCartas()
+   juego.asignarPuntajeCadaCarta()
+   jugadorPrincipal.repartirCartaMano()
+   oponenteNiño.repartirCartaMano()
+   jugadorPrincipal.repartirCartaMano()
+   oponenteNiño.repartirCartaMano()
+   jugadorPrincipal.repartirCartaMano()
+   oponenteNiño.repartirCartaMano()
+   assert.equals(3, jugadorPrincipal.tamañoMano())
+   assert.equals(3, oponenteNiño.tamañoMano())
   }
 
 }

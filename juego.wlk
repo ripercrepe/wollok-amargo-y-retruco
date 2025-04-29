@@ -4,8 +4,10 @@ object juego{
 
     var property cantidadDeManos = 1
     const property cartas = []
+    var property indiceCartasMax = 39
+
     method mano(){
-        
+
     }
     
     method crearCartas(){
@@ -21,6 +23,14 @@ object juego{
         (10..12).forEach({numero => cartas.add(new Carta(palo = palo,numero = numero, puntaje = numero))})
         })
     }
+
+    method reducirIndiceCartas() {
+        indiceCartasMax -= 1
+    }
+    method restablecerIndiceCartas() {
+        indiceCartasMax = 39
+    }
+    method limpiarCartas() = cartas.removeAll(cartas)
     method asignarPuntajeCadaCarta() = cartas.forEach({carta => carta.asignarPuntajeInicial()})
     method cantidadDeCartas() = cartas.size()
 
@@ -28,11 +38,11 @@ object juego{
 }
 
 object envido{
-
+    // crear metodos de sumar puntaje
 }
 
 object truco{
-
+   // crear metodos de truco
 }
 
 
