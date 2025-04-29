@@ -31,9 +31,15 @@ class Carta {
   
 }
 
+const carta = new Carta(palo= bastos, numero = 1, puntaje = 1)
 
-object bastos{
+
+class Palo{
+
 }
-object espadas{}
-object oros{}
-object copas{}
+const bastos = new Palo()
+const espadas = new Palo()
+const oros = new Palo()
+const copas = new Palo()
+
+
