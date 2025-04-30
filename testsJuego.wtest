@@ -4,9 +4,11 @@ import jugadores.*
 
 describe "tests de cartas" {
 
+  method initialize(){
+    juego.crearCartas()
+    juego.asignarPuntajeCadaCarta()
+  }
   test "tests de crear baraja" {
-   juego.crearCartas()
-   juego.asignarPuntajeCadaCarta()
    assert.equals(40, juego.cantidadDeCartas())
    assert.equals(14,juego.cartas().get(0).puntaje())
    assert.equals(9,juego.cartas().get(1).puntaje())
@@ -14,7 +16,6 @@ describe "tests de cartas" {
 
   test "test de barajar mano del jugador"{
    juego.crearCartas()
-   juego.asignarPuntajeCadaCarta()
    jugadorPrincipal.repartirCartaMano()
    jugadorPrincipal.repartirCartaMano()
    jugadorPrincipal.repartirCartaMano()
@@ -23,7 +24,6 @@ describe "tests de cartas" {
 
   test "tests de repartir cartas a jugador y contricante"{
    juego.crearCartas()
-   juego.asignarPuntajeCadaCarta()
    jugadorPrincipal.repartirCartaMano()
    oponenteNiño.repartirCartaMano()
    jugadorPrincipal.repartirCartaMano()
@@ -34,4 +34,14 @@ describe "tests de cartas" {
    assert.equals(3, oponenteNiño.tamañoMano())
   }
 
+  test "test del envido"{
+   juego.crearCartas()
+   jugadorPrincipal.repartirCartaMano()
+   oponenteNiño.repartirCartaMano()
+   jugadorPrincipal.repartirCartaMano()
+   oponenteNiño.repartirCartaMano()
+   jugadorPrincipal.repartirCartaMano()
+   oponenteNiño.repartirCartaMano()
+
+  }
 }

@@ -21,6 +21,7 @@ class Carta {
         else (numeroCarta == 4) return 1
     }
 
+
   method asignarPuntajeInicial() { puntaje = self.calcularPuntaje(numero)}   
   method sieteCopasBastos() = (numero == 7 && (palo == bastos || palo == copas))
   method sieteEspadas() = (numero == 7 && palo == espadas) 
@@ -31,12 +32,9 @@ class Carta {
   
 }
 
-const carta = new Carta(palo= bastos, numero = 1, puntaje = 1)
-
-
 class Palo{
-
 }
+
 const bastos = new Palo()
 const espadas = new Palo()
 const oros = new Palo()

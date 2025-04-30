@@ -4,7 +4,6 @@ import juego.*
 class Jugador {
     const property mano = []
     var property puntos = 0
-    
 
     method repartirCartaMano(){
         var indice = self.numeroAleatorioEntre1yMax()
@@ -20,6 +19,11 @@ class Jugador {
     method añadirCartaAMano(indice) = mano.add(self.indiceDeCartas(indice))
     method removerCartaEnIndice(indice) = juego.cartas().remove(self.indiceDeCartas(indice))
     method limpiarMano() = mano.removeAll(mano)
+
+    // este metodo pone la carta para jugarse
+    method ponerCarta() = mano.get(0)
+    method sumarPuntos(_puntos) {puntos += _puntos} 
+
 }
 
 const jugadorPrincipal = new Jugador()
